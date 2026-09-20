@@ -1,0 +1,11 @@
+<resources>
+    <color name="primary">#E53935</color>
+    <color name="primary_dark">#B71C1C</color>
+    <color name="accent">#00E676</color>
+    <color name="background_dark">#0F1115</color>
+    <color name="card_bg">#1A1D24</color>
+    <color name="text_main">#ECEFF1</color>
+    <color name="text_muted">#78909C</color>
+    <color name="gauge_dial">#263238</color>
+    <color name="gauge_needle">#FF5252</color>
+</resources>

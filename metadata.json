@@ -1,0 +1,6 @@
+{
+  "name": "Engine Simulator Android",
+  "description": "Combustion engine physics simulator and Android APK build system with interactive valvetrain/piston simulation, procedural sound synthesis, and automated GitHub Actions APK pipeline.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

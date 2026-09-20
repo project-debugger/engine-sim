@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_dark"
+    android:padding="8dp">
+
+    <!-- Top Status Bar: Engine Preset & Diagnostics -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/card_bg"
+        android:padding="8dp"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENGINE:"
+            android:textColor="@color/accent"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginEnd="8dp" />
+
+        <Spinner
+            android:id="@+id/spinner_engine_preset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/text_main" />
+
+        <TextView
+            android:id="@+id/tv_rpm_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 RPM"
+            android:textColor="@color/text_main"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <TextView
+            android:id="@+id/tv_power_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 HP | 0 Nm"
+            android:textColor="@color/text_muted"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Center simulation view & gauges -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <!-- Custom Engine Physics & Visual View -->
+        <com.enginesim.app.EngineSimulatorView
+            android:id="@+id/engine_sim_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/card_bg" />
+
+        <!-- Side Gauges & Telemetry -->
+        <LinearLayout
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp"
+            android:background="@color/card_bg"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TELEMETRY"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/text_muted"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_map_pressure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MAP: 101.3 kPa (Atmospheric)"
+                android:textColor="@color/text_main"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_afr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AFR: 14.7 : 1 (Stoich)"
+                android:textColor="@color/text_main"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_gear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GEAR: NEUTRAL"
+                android:textColor="@color/accent"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Throttle Slider Control -->
+            <TextView
+                android:id="@+id/tv_throttle_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="THROTTLE: 0%"
+                android:textColor="@color/text_main"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <SeekBar
+                android:id="@+id/seek_throttle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="@color/primary"
+                android:thumbTint="@color/primary" />
+
+            <!-- Dyno Load Slider -->
+            <TextView
+                android:id="@+id/tv_dyno_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DYNO LOAD: 0 Nm"
+                android:textColor="@color/text_main"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <SeekBar
+                android:id="@+id/seek_dyno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="500"
+                android:progress="0"
+                android:progressTint="@color/accent"
+                android:thumbTint="@color/accent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Controls: Ignition, Starter, Transmission -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp">
+
+        <Button
+            android:id="@+id/btn_ignition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IGNITION: OFF"
+            android:backgroundTint="@color/card_bg"
+            android:textColor="@color/text_main"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn_starter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HOLD STARTER"
+            android:backgroundTint="@color/card_bg"
+            android:textColor="@color/text_main"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn_clutch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLUTCH: DISENGAGED"
+            android:backgroundTint="@color/card_bg"
+            android:textColor="@color/text_main"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn_gear_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GEAR -"
+            android:backgroundTint="@color/card_bg"
+            android:textColor="@color/text_main"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btn_gear_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GEAR +"
+            android:backgroundTint="@color/card_bg"
+            android:textColor="@color/text_main" />
+    </LinearLayout>
+</LinearLayout>

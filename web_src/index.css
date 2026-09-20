@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #0a0d14;
+    color: #e6edf3;
+  }
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}

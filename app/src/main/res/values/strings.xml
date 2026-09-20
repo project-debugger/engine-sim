@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Engine Sim</string>
+    <string name="ignition">IGNITION</string>
+    <string name="starter">STARTER</string>
+    <string name="clutch">CLUTCH</string>
+    <string name="dyno_load">DYNO LOAD</string>
+    <string name="rpm">RPM</string>
+    <string name="throttle">THROTTLE</string>
+</resources>
